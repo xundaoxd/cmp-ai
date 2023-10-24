@@ -1,20 +1,9 @@
-local source = {}
+local source = require('cmp_ai.source')
+local cfg = require('cmp_ai.cfg')
 
-function source:new()
-  return setmetatable({}, { __index = source })
-end
+local M = {}
 
-function source:is_available()
-    return true
-end
+M.source = source
+M.setup = cfg.setup
 
-function source:complete(params, callback)
-    callback({
-        { label = 'demo1' },
-        { label = 'demo2' },
-        { label = 'demo3' },
-    })
-end
-
-return source
-
+return M
