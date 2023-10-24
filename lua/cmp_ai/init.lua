@@ -1,5 +1,9 @@
 local source = {}
 
+function source:new()
+  return setmetatable({}, { __index = source })
+end
+
 function source:is_available()
     return true
 end
